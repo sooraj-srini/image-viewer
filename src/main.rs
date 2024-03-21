@@ -1,5 +1,7 @@
+mod sphere;
 use image::{io::Reader as ImageReader, Rgb};
 use minifb::{Key, Window, WindowOptions};
+use sphere::*;
 
 // const WIDTH: usize = 640;
 // const HEIGHT: usize = 360;
@@ -13,7 +15,7 @@ fn load_image() -> (Vec<Rgb<u8>>,u32,u32) {
 
 
 fn main() {
-
+    let a = Sphere::new(Point3{x : 5., y : 6., z: 7.}, 6.);
     let (buf, height, width) = load_image();
 
     let mut buffer: Vec<u32> = vec![0; (width * height) as usize];
